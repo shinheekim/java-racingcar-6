@@ -11,7 +11,7 @@ public class Cars {
 
     private static final int FORWARD_NUM = 4;
     private static final int MINIMUM_POSITION = 0;
-    
+
     public Cars() {
         this.cars = new ArrayList<>();
     }
@@ -20,10 +20,9 @@ public class Cars {
         for (String carName : carNames) {
             cars.add(new Car(carName));
         }
-        
-
     }
-    public List<Car> getCars(){
+
+    public List<Car> getCars() {
         return cars;
     }
 
@@ -40,7 +39,7 @@ public class Cars {
         return Randoms.pickNumberInRange(0, 9);
     }
 
-    public List<String> findWinners() {    // 여기 매개변수 생각
+    public List<String> findWinners() { // Cars carList
         int maxPosition = MINIMUM_POSITION;
         for (Car car : cars) {
             if (car.getPosition() > maxPosition) {
@@ -50,9 +49,10 @@ public class Cars {
         List<String> winners = new ArrayList<>();
         for (Car car : cars) {
             if (car.getPosition() == maxPosition) {
-                winners.add(car.carName);
+                winners.add(car.getName());
             }
         }
         return winners;
     }
+
 }

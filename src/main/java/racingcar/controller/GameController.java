@@ -12,13 +12,13 @@ import java.util.List;
 public class GameController {
 
     private final Cars cars = new Cars();
-    int repeat;
+
 
     public void gameStart(){
        String[] carNames = InputView.inputCarName();
        CarNameValidate.validateCarName(carNames);
        cars.inputCarName(carNames);
-       repeat =InputView.showMoveCount();
+       int repeat =InputView.showMoveCount();
        Racing(repeat);
        OutputView.printWinnerCars(findWinners());
     }
@@ -36,5 +36,4 @@ public class GameController {
     public List<String> findWinners(){
         return cars.findWinners();
     }
-
 }
