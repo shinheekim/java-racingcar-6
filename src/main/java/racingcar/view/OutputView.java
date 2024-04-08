@@ -4,6 +4,7 @@ import racingcar.domain.Car;
 import racingcar.domain.Cars;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class OutputView {
 
@@ -11,21 +12,23 @@ public class OutputView {
         System.out.println("실행 결과");
     }
 
-    public static void printCar(Cars cars){
+    public static void showCar(Cars cars){
         List<Car> participants = cars.getCars();
         for (Car car : participants) {
             System.out.print(car.getName() + " : ");
-            printCarPosition(car);
+            showCarPosition(car);
         }
+        System.out.println();
     }
-    public static void printCarPosition(Car car){
+    public static void showCarPosition(Car car){
         for(int i = 0; i < car.getPosition(); i++){
             System.out.print("-");
         }
         System.out.println();
     }
-    public static void printWinnerCars(List<Car> winners){
-        System.out.println("최종 우승자 : ");
+    public static void printWinnerCars(List<String> winners){
+        System.out.print("최종 우승자 : " + String.join(", ", winners));
 
     }
+
 }
