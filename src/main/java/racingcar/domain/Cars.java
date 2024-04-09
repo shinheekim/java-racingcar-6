@@ -6,9 +6,7 @@ import java.util.*;
 
 public class Cars {
 
-
     private List<Car> cars;
-
     private static final int FORWARD_NUM = 4;
     private static final int MINIMUM_POSITION = 0;
 
@@ -39,7 +37,8 @@ public class Cars {
         return Randoms.pickNumberInRange(0, 9);
     }
 
-    public List<String> findWinners() { // Cars carList
+
+    public List<String> findWinners() {
         int maxPosition = MINIMUM_POSITION;
         for (Car car : cars) {
             if (car.getPosition() > maxPosition) {
