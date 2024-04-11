@@ -17,11 +17,11 @@ public class GameController {
         CarNameValidate.validateCarName(carNames);
         cars.inputCarName(carNames);
         int repeat = InputView.showMoveCount();
-        Racing(repeat);
+        racing(repeat);
         OutputView.printWinnerCars(findWinners());
     }
 
-    public void Racing(int repeat) {
+    public void racing(int repeat) {
         OutputView.outputMessage();
         for (int round = 0; round < repeat; round++) {
             cars.carForward();
@@ -32,4 +32,5 @@ public class GameController {
     public List<String> findWinners() {
         return cars.findWinners();
     }
+
 }

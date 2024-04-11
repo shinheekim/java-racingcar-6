@@ -28,7 +28,7 @@ public class Cars {
     public void carForward() {
         for (Car car : cars) {
             if (createRandomNum() >= FORWARD_NUM) {
-                car.moveForward(); // position++;
+                car.moveForward();
             }
         }
     }
